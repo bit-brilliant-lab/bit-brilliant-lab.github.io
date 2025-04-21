@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/logo.png" type="image/png">
-    <title>加入我们 - 北京理工大学脑机接口与类脑智能研究中心</title>
+    <link rel="icon" href="../assets/logo.png" type="image/png">
+    <title>论文发表 - 北京理工大学脑机接口与类脑智能研究中心</title>
     <style>
         /* 全局样式 */
         body {
@@ -36,10 +36,6 @@
             text-decoration: none;
             margin-left: 2rem;
             opacity: 0.9;
-        }
-
-        .nav-links a:hover {
-            opacity: 1;
         }
 
         /* 主要内容样式 */
@@ -77,22 +73,17 @@
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
         }
 
-        .join-section {
-            margin-bottom: 60px;
+        .article-section {
             padding: 30px;
             border-radius: 10px;
             background-color: #ffffff;
-            transition: transform 0.3s ease;
-        }
-
-        .join-section:last-child {
-            margin-bottom: 0;
         }
 
         .section-title {
             font-size: 28px;
             font-weight: 600;
             color: #2c3e50;
+            margin-top: 40px;
             margin-bottom: 25px;
             padding-left: 20px;
             border-left: 5px solid #4553cd;
@@ -101,45 +92,34 @@
             align-items: center;
         }
 
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
         .section-content {
             padding: 0 20px;
         }
 
-        .section-content p {
-            text-indent: 2em;
-            line-height: 2;
-            font-size: 16px;
-            color: #3a4a5a;
-            margin-bottom: 25px;
-            text-align: left;
-            letter-spacing: 0.5px;
-        }
-
-        .section-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .contact-info {
-            padding: 25px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .contact-info p {
-            text-indent: 0;
+        .article-item {
+            padding: 20px;
             margin-bottom: 20px;
             line-height: 1.8;
+            font-size: 16px;
+            color: #3a4a5a;
             text-align: left;
+            letter-spacing: 0.5px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .contact-info p:last-child {
+        .article-item:hover {
+            transform: translateX(5px);
+        }
+
+        .article-item:last-child {
             margin-bottom: 0;
-        }
-
-        .contact-info strong {
-            color: #2c3e50;
-            margin-right: 15px;
-            font-weight: 600;
+            border-bottom: none;
         }
 
         /* 页脚样式 */
@@ -160,12 +140,9 @@
         }
 
         @media screen and (max-width: 768px) {
-            .navbar {
-                padding: 0.8rem 1.5rem;
-            }
-
             .declaration-box {
                 width: 95%;
+                margin-top: 20px;
             }
 
             .title-box {
@@ -173,9 +150,8 @@
                 margin-bottom: 40px;
             }
 
-            .join-section {
+            .article-section {
                 padding: 20px;
-                margin-bottom: 40px;
             }
 
             .section-title {
@@ -187,10 +163,10 @@
                 padding: 0 10px;
             }
 
-            .section-content p {
+            .article-item {
                 font-size: 15px;
-                line-height: 1.8;
-                margin-bottom: 20px;
+                padding: 15px;
+                margin-bottom: 15px;
             }
         }
     </style>
@@ -203,46 +179,68 @@
                 <span>R.C. for BCI & BII, BIT</span>
             </div>
             <div class="nav-links">
-                <a href="index.html">首页</a>
-                <a href="research.html">研究</a>
-                <a href="team.html">团队</a>
-                <a href="publications.html">论文</a>
-                <a href="join.html">加入我们</a>
-                <a href="english/index.html">English</a>
+                <a href="index.html">Homepage</a>
+                <a href="research.html">Research</a>
+                <a href="team.html">Team</a>
+                <a href="publications.html">Publications</a>
+                <a href="join.html">Join us</a>
+                <a href="../index.html">中文</a>
             </div>
         </div>
     </nav>
 
     <!-- 主要内容 -->
     <div class="declaration-box">
-        <div class="title-box">加入我们</div>
+        <div class="title-box">论文发表</div>
         <div class="content-box">
-            <!-- 设备 -->
-            <div class="join-section">
-                <h2 class="section-title">实验室设备</h2>
+            <div class="article-section">
+                <!-- 2024年论文 -->
+                <h2 class="section-title">2024</h2>
                 <div class="section-content">
-                    <p>北京理工大学计算机学院脑机接口与类脑智能研究中心每年招收博士研究生和硕士研究生多名，欢迎感兴趣的同学联系我们！</p>
-                    <p>本实验室常年招收脑机接口与类脑智能方向博士后研究员以及校企联合培养博士后研究员，优秀申请者可以推荐至学校参评特立博后和国际交流项目。</p>
-                    <p>此外，中心长期招收校内外实习生，有继续深造意愿，希望攻读硕士/博士学位，掌握深度学习、脑科学基础、有竞赛经历申请者优先！中心研究经费充足，拥有多台华为昇腾910系列高性能显卡服务器和NVIDIA L40S、A100以及H100高性能显卡计算集群，期待加入！</p>
-                </div>
-            </div>
-            <!-- 招生信息 -->
-            <div class="join-section">
-                <h2 class="section-title">招生信息</h2>
-                <div class="section-content">
-                    <p>北京理工大学计算机学院脑机接口与类脑智能研究中心每年招收博士研究生和硕士研究生多名，欢迎感兴趣的同学联系我们！</p>
-                    <p>本实验室常年招收脑机接口与类脑智能方向博士后研究员以及校企联合培养博士后研究员，优秀申请者可以推荐至学校参评特立博后和国际交流项目。</p>
-                    <p>此外，中心长期招收校内外实习生，有继续深造意愿，希望攻读硕士/博士学位，掌握深度学习、脑科学基础、有竞赛经历申请者优先！中心研究经费充足，拥有多台华为昇腾910系列高性能显卡服务器和NVIDIA L40S、A100以及H100高性能显卡计算集群，期待加入！</p>
-                </div>
-            </div>
+                    <div class="article-item">
+                        Qixin Wang, Chaoqiong Fan, Tianyuan Jia, Yuyang Han, Xia Wu*. ND-MRM: Neuronal Diversity Inspired Multisensory Recognition Model, Thirty-Eighth AAAI Conference on Artificial Intelligence, 2024.
+                    </div>
+                    <div class="article-item">
+                        Ziyu Li, Qing Li, Zhiyuan Zhu, Zhongyi Hu, Xia Wu*. Multi-Scale Spatio-Temporal Fusion with Adaptive Brain Topology Learning for fMRI Based Neural Decoding. IEEE Journal of Biomedical and Health Informatics, 2024, 28(1): 262-272.
+                    </div>
+                    <div class="article-item">
+                        Zhenyu Li, Xiuxing Li*, Sunqi Fan, Jianyong Wang. Optimization Techniques for Unsupervised Complex Table Reasoning Via Self-Training Framework[J]. IEEE Transactions on Knowledge and Data Engineering, 2024.
+                    </div>
+                    <div class="article-item">
+                        Longxiang Liu, Xiuxing Li, Yang Feng*. TAAT: Enhancing Task-Oriented Dialog with Turn-Level Auxiliary Tasks and Action-Tree Based Scheduled Sampling.
+                    </div>
 
-            <!-- 联系方式 -->
-            <div class="join-section">
-                <h2 class="section-title">联系方式</h2>
+                    
+                </div>
+
+                <!-- 2023年论文 -->
+                <h2 class="section-title">2023</h2>
                 <div class="section-content">
-                    <div class="contact-info">
-                        <p><strong>邮箱：</strong>wuxia@bit.edu.cn</p>
-                        <p><strong>地址：</strong>北京理工大学中关村校区中心教学楼1401</p>
+                    <div class="article-item">
+                        Zhiyuan Zhu, et al. From sMRI to task-fMRI: A unified geometric deep learning framework for cross-modal brain anatomo-functional mapping. Medical Image Analysis, 2023, 83: 102681.
+                    </div>
+                    <div class="article-item">
+                        Zhu, Z., Huang, T., Zhen, Z., Wang, B., Wu, X., Li, S. From sMRI to task-fMRI: A unified geometric deep learning framework for cross-modal brain anatomo-functional mapping. Medical Image Analysis, 83: 102681.
+                    </div>
+                    <div class="article-item">
+                        Qing Li, Haixing Dai, Jinglei Lv, Lin Zhao, Zhengliang Liu, Zihao Wu, Xia Wu, Claire Coles*, Xiaoping Hu*, Tianming Liu*, Dajiang Zhu*. Individual Functional Network Abnormalities Mapping via Graph Representation-based Neural Architecture Search. ADMA 2023, 79-91 (Oral).
+                    </div>
+                    <div class="article-item">
+                        Ziyu Li, Zhiyuan Zhu, Qing Li, Xia Wu. Jointly Fusing Multi-scale Spatial-logical Brain Networks: A Neural Decoding Method. IEEE Journal of Biomedical and Health Informatics, 2023, 27(1): 445-456.
+                    </div>
+                </div>
+
+                <!-- 2022年论文 -->
+                <h2 class="section-title">2022</h2>
+                <div class="section-content">
+                    <div class="article-item">
+                        Xueyuan Xu, Xia Wu, et al. A General Framework for Feature Selection under Orthogonal Regression with Global Redundancy Minimization. IEEE Transactions on Knowledge and Data Engineering, 2022, 34(11): 5056-5069.
+                    </div>
+                    <div class="article-item">
+                        Qing Li, Wei Zhang, Lin Zhao, Xia Wu, Tianming Liu. Evolutional Neural Architecture Search for Optimization of Spatiotemporal Brain Network Decomposition. IEEE Transactions on Biomedical Engineering. 2022, 69(2): 624-634.
+                    </div>
+                    <div class="article-item">
+                        Hailing Wang, Xia Wu, Li Yao. Identifying cortical brain directed connectivity networks from high-density EEG for emotion recognition. IEEE Transactions on Affective Computing, 2022, 13(3):1489-1500.
                     </div>
                 </div>
             </div>

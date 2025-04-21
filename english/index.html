@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/logo.png" type="image/png">
+    <link rel="icon" href="../assets/logo.png" type="image/png">
     <title>北京理工大学脑机接口与类脑智能研究中心</title>
     <style>
         /* 全局样式 */
@@ -129,6 +129,38 @@
             margin-top: 0.5rem;
         }
 
+        /* 添加轮播图样式 */
+        .slideshow-container {
+            max-width: 1200px;
+            margin: 0 auto 2rem auto;
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-dots {
+            text-align: center;
+            margin-top: -30px;
+            position: relative;
+            z-index: 1;
+        }
+
         .dot {
             height: 12px;
             width: 12px;
@@ -169,45 +201,6 @@
         .important-list li:last-child {
             border-bottom: none;
         }
-        
-        .image-grid {
-            max-width: 1200px;
-            margin: 0 auto 2rem auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            padding: 0 1rem;
-        }
-
-        .image-item {
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .image-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .image-item img:hover {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .image-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-        }
-
-        /* 可以删除原有的轮播图相关样式 */
-
-
     </style>
 </head>
 <body>
@@ -218,12 +211,12 @@
                 <span>R.C. for BCI & BII, BIT</span>
             </div>
             <div class="nav-links">
-                <a href="index.html">首页</a>
-                <a href="research.html">研究</a>
-                <a href="team.html">团队</a>
-                <a href="publications.html">论文</a>
-                <a href="join.html">加入我们</a>
-                <a href="english/index.html">English</a>
+                <a href="index.html">Homepage</a>
+                <a href="research.html">Research</a>
+                <a href="team.html">Team</a>
+                <a href="publications.html">Publications</a>
+                <a href="join.html">Join us</a>
+                <a href="../index.html">中文</a>
             </div>
         </div>
     </nav>
@@ -234,25 +227,30 @@
         <div class="subtitle">Research Center for Brain-Computer Interface and Brain-Inspired Intelligence, BIT</div>
     </div>
 
-    <!-- 图片展示 -->
-            <div class="image-grid">
-                <div class="image-item">
-                    <img src="./assets/activities/250315_1.jpeg" alt="实验室环境">
-                </div>
-                <div class="image-item">
-                    <img src="./assets/activities/250315_2.jpeg" alt="科研设备">
-                </div>
-                <div class="image-item">
-                    <img src="./assets/activities/250315_3.jpeg" alt="团队合影">
-                </div>
-            </div>
+    <!-- 添加轮播图 -->
+    <div class="slideshow-container">
+        <div class="slide active">
+            <img src="./assets/i1.jpg" alt="实验室环境">
+        </div>
+        <div class="slide">
+            <img src="./assets/i2.jpg" alt="科研设备">
+        </div>
+        <div class="slide">
+            <img src="./assets/cover.jpg" alt="团队合影">
+        </div>
+        <div class="slide-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
 
     <!-- 主要内容 -->
     <div class="container">
         <!-- 实验室简介 -->
         <section class="section">
             <h2 class="section-title">实验室简介</h2>
-            <p>北京理工大学脑机接口与类脑智能研究中心面向国家重大需求，围绕人工智能与脑科学，致力于运用人工智能技术理论和方法，挖掘人脑特征，探索认知功能脑机制，同时受益于脑科学探究中获得的启发与灵感，开发新的人工智能理论方法，将脑机接口技术赋能于工业制造、医疗、军事。</p>
+            <p>面向国家重大需求，围绕人工智能与脑科学，致力于运用人工智能技术理论和方法，挖掘人脑特征，探索认知功能脑机制，同时受益于脑科学探究中获得的启发与灵感，开发新的人工智能理论方法，将脑机接口技术赋能于工业制造、医疗、军事。</p>
         </section>
 
         <!-- 重要信息 -->
@@ -261,8 +259,8 @@
             <h2 class="section-title">重要信息</h2>
             <ul class="important-list">
                 <li>
-                    <span><a href="activities/250315.html" style="color: #404f5e; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">湖北招生组参观</a></span>
-                    <span class="important-date">2025-03-15</span>
+                    <span>北京理工大学计算机学院脑机接口与类脑智能研究中心每年招收博士研究生和硕士研究生多名</span>
+                    <span class="important-date">2024-01-15</span>
                 </li>
                 <li>
                     <span>欢迎对脑机接口与类脑智能研究感兴趣的同学加入我们</span>
@@ -372,4 +370,3 @@
     </script>
 </body>
 </html>
-
