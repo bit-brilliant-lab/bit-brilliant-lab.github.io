@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../assets/logo.png" type="image/png">
-    <title>北京理工大学脑机接口与类脑智能研究中心</title>
+    <title>R.C. for BCI & BII, BIT</title>
     <style>
         /* 全局样式 */
         body {
@@ -129,50 +129,40 @@
             margin-top: 0.5rem;
         }
 
-        /* 添加轮播图样式 */
-        .slideshow-container {
+        /*图片网格*/
+        .image-grid {
             max-width: 1200px;
             margin: 0 auto 2rem auto;
-            position: relative;
-            overflow: hidden;
-            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 0 1rem;
         }
 
-        .slide {
-            display: none;
+        .image-item {
             width: 100%;
-            height: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .slide.active {
-            display: block;
-        }
-
-        .slide img {
+        .image-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
         }
 
-        .slide-dots {
-            text-align: center;
-            margin-top: -30px;
-            position: relative;
-            z-index: 1;
+        .image-item img:hover {
+            transform: scale(1.05);
         }
 
-        .dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 5px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .dot.active {
-            background-color: #3498db;
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
         }
 
         /* 重要信息列表样式 */
@@ -227,21 +217,16 @@
         <div class="subtitle">Research Center for Brain-Computer Interface and Brain-Inspired Intelligence, BIT</div>
     </div>
 
-    <!-- 添加轮播图 -->
-    <div class="slideshow-container">
-        <div class="slide active">
-            <img src="./assets/i1.jpg" alt="实验室环境">
+    <!-- 图片展示 -->
+    <div class="image-grid">
+        <div class="image-item">
+            <img src="../assets/activities/250315_1.jpeg" alt="实验室环境">
         </div>
-        <div class="slide">
-            <img src="./assets/i2.jpg" alt="科研设备">
+        <div class="image-item">
+            <img src="../assets/activities/250315_2.jpeg" alt="科研设备">
         </div>
-        <div class="slide">
-            <img src="./assets/cover.jpg" alt="团队合影">
-        </div>
-        <div class="slide-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+        <div class="image-item">
+            <img src="../assets/activities/250315_3.jpeg" alt="团队合影">
         </div>
     </div>
 
@@ -249,69 +234,65 @@
     <div class="container">
         <!-- 实验室简介 -->
         <section class="section">
-            <h2 class="section-title">实验室简介</h2>
-            <p>面向国家重大需求，围绕人工智能与脑科学，致力于运用人工智能技术理论和方法，挖掘人脑特征，探索认知功能脑机制，同时受益于脑科学探究中获得的启发与灵感，开发新的人工智能理论方法，将脑机接口技术赋能于工业制造、医疗、军事。</p>
+            <h2 class="section-title">Introduction</h2>
+            <p>Beijing Institute of Technology's Brain-Computer Interface and Brain-like Intelligence Laboratory focuses on national major needs, revolves around artificial intelligence and neuroscience, and is committed to applying artificial intelligence technology theories and methods to explore human brain characteristics and cognitive function brain mechanisms. At the same time, it benefits from insights and inspirations gained from neuroscience research, developing new artificial intelligence theories and methods, and empowering brain-computer interface technology in industrial manufacturing, medical care, and military affairs.</p>
+            <p>The research group regularly carries out academic cooperation with top international and domestic research teams such as Harvard University, Cornell University, University of Sydney, University of California, Los Angeles, Hong Kong University of Science and Technology, Tsinghua University, and the Institute of Computing Technology of the Chinese Academy of Sciences. The research group annually enrolls several doctoral and master's students, and welcomes students interested in research related to artificial intelligence and neuroscience to join.</p>
         </section>
 
         <!-- 重要信息 -->
         <!-- 重要信息部分更新 -->
         <section class="section">
-            <h2 class="section-title">重要信息</h2>
+            <h2 class="section-title">Activities & News</h2>
             <ul class="important-list">
                 <li>
-                    <span>北京理工大学计算机学院脑机接口与类脑智能研究中心每年招收博士研究生和硕士研究生多名</span>
-                    <span class="important-date">2024-01-15</span>
+                    <span><a href="join.html" style="color: #404f5e; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">北京理工大学脑机接口与类脑智能实验室招新</a></span>
+                    <span class="important-date">2025-03-15</span>                   
                 </li>
                 <li>
-                    <span>欢迎对脑机接口与类脑智能研究感兴趣的同学加入我们</span>
-                    <span class="important-date">2024-01-10</span>
+                    <span><a href="../activities/250315.html" style="color: #404f5e; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">湖北招生组一行参观</a></span>
+                    <span class="important-date">2025-03-15</span>
                 </li>
                 <li>
                     <span>可以通过邮件联系导师详细了解研究方向</span>
                     <span class="important-date">2024-01-05</span>
                 </li>
                 <li>
-                    <span>实验室提供良好的科研环境和充足的计算资源</span>
-                    <span class="important-date">2024-01-01</span>
+                    <span>欢迎对脑机接口与类脑智能研究感兴趣的同学加入我们</span>
+                    <span class="important-date">2024-01-10</span>
                 </li>
             </ul>
         </section>
 
         <!-- 团队成员 -->
         <section class="section">
-            <h2 class="section-title">团队成员</h2>
-            <h3>导师</h3>
+            <h2 class="section-title">Team Members</h2>
             <div class="member-grid">
                 <!-- 邬霞 -->
                 <div class="member-card">
-                    <h4 class="member-name">邬霞</h4>
-                    <p class="member-title">教授、博士生导师</p>
-                    <p>邮箱：wuxia@bit.edu.cn</p>
-                    <p>办公室：北京市海淀区中关村南大街5号北京理工大学</p>
+                    <h4 class="member-name">Wuxia</h4>
+                    <p class="member-title">Professor, doctoral supervisor</p>
+                    <p>Mail: wuxia@bit.edu.cn</p>
                 </div>
                 
                 <!-- 李秀星 -->
                 <div class="member-card">
-                    <h4 class="member-name">李秀星</h4>
-                    <p class="member-title">特别副研究员、研究生导师</p>
-                    <p>邮箱：xxl@bit.edu.cn</p>
-                    <p>办公室：北京理工大学中心教学楼1402</p>
+                    <h4 class="member-name">Li Xiuxing</h4>
+                    <p class="member-title">Special Research Fellow, Graduate Supervisor</p>
+                    <p>Mail: xxl@bit.edu.cn</p>
                 </div>
 
                 <!-- 李晴 -->
                 <div class="member-card">
-                    <h4 class="member-name">李晴</h4>
-                    <p class="member-title">助理教授、特别副研究员</p>
-                    <p>邮箱：liqing@bit.edu.cn</p>
-                    <p>办公室：北京理工大学中心教学楼1402</p>
+                    <h4 class="member-name">Li Qing</h4>
+                    <p class="member-title">Special Research Fellow, Graduate Supervisor</p>
+                    <p>Mail: liqing@bit.edu.cn</p>
                 </div>
 
                 <!-- 王焯 -->
                 <div class="member-card">
-                    <h4 class="member-name">王焯</h4>
-                    <p class="member-title">助理教授、特别副研究员</p>
-                    <p>邮箱：wang-zhuo@bit.edu.cn</p>
-                    <p>办公室：北京理工大学中心教学楼1402</p>
+                    <h4 class="member-name">Wang Zhuo</h4>
+                    <p class="member-title">Associate Professor, Special Research Fellow</p>
+                    <p>Mail: wang-zhuo@bit.edu.cn</p>
                 </div>
             </div>
         </section>
