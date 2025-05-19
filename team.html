@@ -92,16 +92,23 @@
             overflow: hidden;
             transition: transform 0.3s ease;
             cursor: pointer;
+            padding-top: 20px;  /* 添加顶部内边距 */
+        }
+
+        .member-avatar {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            object-position: center 30%;  /* 修改这行，使图片显示位置稍微下移 */
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .member-card:hover {
             transform: translateY(-5px);
-        }
-
-        .member-avatar {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
         }
 
         .member-info {
@@ -181,7 +188,7 @@
             <h2 class="section-title">导师</h2>
             <div class="members-grid">
                 <div class="member-card" onclick="window.location.href='./teachers/wuxia.html'">
-                    <img src="assets/teachers/picture1.jpg" alt="邬霞" class="member-avatar">
+                    <img src="assets/teachers/wuxia1.jpg" alt="邬霞" class="member-avatar">
                     <div class="member-info">
                         <h3>邬霞</h3>
                         <p>博士生导师</p>
@@ -189,7 +196,7 @@
                 </div>
 
                 <div class="member-card" onclick="window.location.href='./teachers/liqing.html'">
-                    <img src="assets/teachers/picture2.png" alt="李晴" class="member-avatar">
+                    <img src="assets/teachers/liqing1.png" alt="李晴" class="member-avatar">
                     <div class="member-info">
                         <h3>李晴</h3>
                         <p>硕士生导师</p>
@@ -198,7 +205,7 @@
                 </div>
 
                 <div class="member-card" onclick="window.location.href='./teachers/lixiuxing.html'">
-                    <img src="assets/teachers/lixiuxing.jpg" alt="李秀星" class="member-avatar">
+                    <img src="assets/teachers/lixiuxing1.jpg" alt="李秀星" class="member-avatar">
                     <div class="member-info">
                         <h3>李秀星</h3>
                         <p>硕士生导师</p>
@@ -206,7 +213,7 @@
                 </div>
 
                 <div class="member-card" onclick="window.location.href='./teachers/wangzhuo.html'">
-                    <img src="assets/teachers/wangzhuo.jpg" alt="王焯" class="member-avatar">
+                    <img src="assets/teachers/wangzhuo1.jpg" alt="王焯" class="member-avatar">
                     <div class="member-info">
                         <h3>王焯</h3>
                         <p>硕士生导师</p>
