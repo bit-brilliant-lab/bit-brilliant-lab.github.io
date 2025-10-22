@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/logo.png" type="image/png">
+    <title>活动新闻 - 北京理工大学脑机接口与类脑智能研究中心</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            padding: 0.8rem 4rem;
+            color: white;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            opacity: 0.9;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* 主要内容样式 */
+        .declaration-box {
+            width: 90%;
+            margin: 20px auto 80px;
+        }
+
+        .title-box {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 48px;
+            margin-bottom: 60px;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .title-box::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #4553cd, #7986cb);
+        }
+
+        .content-box {
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .join-section {
+            margin-bottom: 60px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .join-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 5px solid #4553cd;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-content {
+            padding: 0 20px;
+        }
+
+        .section-content p {
+            text-indent: 2em;
+            line-height: 2;
+            font-size: 16px;
+            color: #3a4a5a;
+            margin-bottom: 25px;
+            text-align: left;
+            letter-spacing: 0.5px;
+        }
+
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-info {
+            padding: 25px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .contact-info p {
+            text-indent: 0;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .contact-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-info strong {
+            color: #2c3e50;
+            margin-right: 15px;
+            font-weight: 600;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .declaration-box {
+                width: 95%;
+            }
+
+            .title-box {
+                font-size: 24px;
+                margin-bottom: 40px;
+            }
+
+            .join-section {
+                padding: 20px;
+                margin-bottom: 40px;
+            }
+
+            .section-title {
+                font-size: 22px;
+                padding-left: 15px;
+            }
+
+            .section-content {
+                padding: 0 10px;
+            }
+
+            .section-content p {
+                font-size: 15px;
+                line-height: 1.8;
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* 活动记录样式 */
+        .activity-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .activity-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .activity-title {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .activity-meta {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .activity-meta span {
+            margin: 0 15px;
+        }
+
+        .activity-content {
+            line-height: 1.8;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .activity-content p {
+            margin-bottom: 20px;
+            text-indent: 2em;
+        }
+
+        .activity-images {
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .activity-images img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .activity-container {
+                margin: 20px auto;
+                padding: 20px;
+            }
+
+            .activity-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <span>R.C. for BCI & BII, BIT</span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="../research.html">研究</a>
+                <a href="../team.html">团队</a>
+                <a href="../publications.html">论文</a>
+                <a href="../join.html">加入我们</a>
+                <a href="../english/index.html">English</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="activity-container">
+        <div class="activity-header">
+            <h1 class="activity-title">禾光智能项目组在多个大赛中取得了优异的成绩</h1>
+            <div class="activity-meta">
+                <span>发布时间：2025-10-12</span>
+            </div>
+        </div>
+        
+        <div class="activity-content">
+            <p>近日，从 “青创北京” 2025 年 “挑战杯” 首都大学生课外学术科技作品竞赛、中国国际大学生创新大赛及第四届北京大学生创新创业大赛传来捷报：脑智中心由李秀星、邬霞两位导师联合指导的 “禾光智能 —— 精准制导激光除草机器人系统” 项目组，凭借技术突破与应用价值，一举摘得 “挑战杯” 一等奖、中国国际大学生创新大赛特等奖、北京大学生创新创业大赛三等奖，成为跨赛事获奖的亮眼标杆。</p>
+            <p>禾光智能项目组立足智慧农业与类脑智能制造前沿，聚焦农业自动化领域的“痛点”问题，提出了基于激光视觉识别与类脑智能导航算法的精准除草机器人系统，大幅提升农田作业效率与可持续性，真正让“科技赋能农业”落到实处。</p>
+            <p>在项目的研发与打磨过程中，团队在两位导师李秀星、邬霞的悉心指导下，不断优化算法性能与硬件结构，攻克了识别精度、能量控制、环境适应等多项关键技术难题。最终，项目凭借创新性、实用性与社会价值的完美结合，从众多参赛作品中脱颖而出，赢得了专家评审的一致好评。</p>
+            <P>此次获奖，不仅彰显了团队卓越的创新能力与科研精神，也充分体现了脑智中心在类脑智能装备与创新人才培养方面的综合实力。</P>
+            <div class="activity-images">
+                <img src="../assets/activities/251012_1.jpg">
+                <img src="../assets/activities/251012_2.jpg">
+                <img src="../assets/activities/251012_3.jpg">
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    
+</body>
+</html>

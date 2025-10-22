@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/logo.png" type="image/png">
+    <title>活动新闻 - 北京理工大学脑机接口与类脑智能研究中心</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            padding: 0.8rem 4rem;
+            color: white;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            opacity: 0.9;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* 主要内容样式 */
+        .declaration-box {
+            width: 90%;
+            margin: 20px auto 80px;
+        }
+
+        .title-box {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 48px;
+            margin-bottom: 60px;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .title-box::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #4553cd, #7986cb);
+        }
+
+        .content-box {
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .join-section {
+            margin-bottom: 60px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .join-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 5px solid #4553cd;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-content {
+            padding: 0 20px;
+        }
+
+        .section-content p {
+            text-indent: 2em;
+            line-height: 2;
+            font-size: 16px;
+            color: #3a4a5a;
+            margin-bottom: 25px;
+            text-align: left;
+            letter-spacing: 0.5px;
+        }
+
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-info {
+            padding: 25px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .contact-info p {
+            text-indent: 0;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .contact-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-info strong {
+            color: #2c3e50;
+            margin-right: 15px;
+            font-weight: 600;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .declaration-box {
+                width: 95%;
+            }
+
+            .title-box {
+                font-size: 24px;
+                margin-bottom: 40px;
+            }
+
+            .join-section {
+                padding: 20px;
+                margin-bottom: 40px;
+            }
+
+            .section-title {
+                font-size: 22px;
+                padding-left: 15px;
+            }
+
+            .section-content {
+                padding: 0 10px;
+            }
+
+            .section-content p {
+                font-size: 15px;
+                line-height: 1.8;
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* 活动记录样式 */
+        .activity-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .activity-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .activity-title {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .activity-meta {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .activity-meta span {
+            margin: 0 15px;
+        }
+
+        .activity-content {
+            line-height: 1.8;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .activity-content p {
+            margin-bottom: 20px;
+            text-indent: 2em;
+        }
+
+        .activity-images {
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .activity-images img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .activity-container {
+                margin: 20px auto;
+                padding: 20px;
+            }
+
+            .activity-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <span>R.C. for BCI & BII, BIT</span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="../research.html">研究</a>
+                <a href="../team.html">团队</a>
+                <a href="../publications.html">论文</a>
+                <a href="../join.html">加入我们</a>
+                <a href="../english/index.html">English</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="activity-container">
+        <div class="activity-header">
+            <h1 class="activity-title">清华大学王立元教授受邀作客《脑智“新”声》系列讲座</h1>
+            <div class="activity-meta">
+                <span>发布时间：2025-10-17</span>
+            </div>
+        </div>
+        
+        <div class="activity-content">
+            <p>近日，清华大学王立元教授受邀作客《脑智“新”声》系列讲座，深入解读机器学习与神经科学交叉前沿，分享团队在人工智能与生物智能融合领域的突破性成果。</p>
+            <p>王教授团队聚焦构建 AI 与生物智能通用模型，成果已在科学智能、智慧医疗、AIGC 等领域落地。讲座重点介绍脑启发持续学习技术，指出当前 AI 模型虽学习能力提升，但 “全面智能” 仍存瓶颈，类脑研究是突破关键。他以 GPT-3.5 为例，对比 AI 与人类智能差异，强调 “灾难性遗忘” 是 AI 实现持续学习的核心难题。</p>
+            <p>团队从生物系统获灵感，借鉴果蝇多模块并行网络架构，提出 “可调节遗忘率” 概念，研发优化算法，实现 “保护旧任务” 与 “学习新任务” 双重目标，并联合神经科学专家验证模型合理性。针对预训练模型应用挑战，团队提出降低学习率、“纠正回放旧数据” 等方案，还通过 Laura Adapter 等技术优化模型参数。</p>
+            <p>在多模态领域，团队构建模态异构持续训练范式，开发世界级多模态生成模型，可实时监测脉搏、血压等生理信号，预警心梗。针对穿戴设备信号质量与测量复杂度难题，提出 “动态生成模型” 解决方案。此外，团队研发多尺度特征提取与持续预训练模型，在医疗健康领域实现 ICU 病人诊断、心电疾病预警等应用，还探索脑科学在空间认知、智能导航中的作用，推动 AI 与生物智能融合。</p>
+            <p>在互动环节，现场师生就持续学习算法、脑启发模型设计及AI医疗应用等问题与王教授进行了深入交流。王教授鼓励同学们以跨学科视野思考人工智能未来的发展路径，并表示类脑智能研究需要神经科学、计算机科学、心理学等多领域的协同合作。讲座结束后，与会师生合影留念，活动在热烈的学术氛围中圆满结束。</p>
+            <div class="activity-images">
+                <img src="../assets/activities/251017_1.jpg">
+                <img src="../assets/activities/251017_2.jpg">
+                <img src="../assets/activities/251017_3.jpg">
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    
+</body>
+</html>
