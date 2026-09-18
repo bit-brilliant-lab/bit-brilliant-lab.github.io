@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/logo.png" type="image/png">
+    <title>教师详情 - 北京理工大学脑机接口与类脑智能研究中心</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            padding: 0.8rem 4rem;
+            color: white;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            opacity: 0.9;
+        }
+
+        /* 个人信息头部 */
+        .profile-header {
+            background: linear-gradient(135deg, #1a237e, #3949ab);
+            padding: 60px 0;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .avatar img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+        }
+
+        .info {
+            text-align: left;
+        }
+
+        .info h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .info .title {
+            font-size: 20px;
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        .info .contact {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .info .contact div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0;
+        }
+
+        .info .contact a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .info .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card, .side-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            font-size: 24px;
+            color: #1a237e;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8eaf6;
+        }
+
+        h3 {
+            color: #1a237e;
+            font-size: 20px;
+            margin: 0 0 15px;
+        }
+
+        .bio, .publication-text, .content-text {
+            line-height: 1.8;
+            color: #37474f;
+            text-align: justify;
+        }
+
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #e8eaf6;
+            color: #1a237e;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .profile-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .info .contact {
+                text-align: center;
+            }
+
+            .info .contact div {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <span>R.C. for BCI & BII, BIT</span>
+                </div>
+                <div class="nav-links">
+                    <a href="../index.html">首页</a>
+                    <a href="../research.html">研究</a>
+                    <a href="../team.html">团队</a>
+                    <a href="../publications.html">论文</a>
+                    <a href="../join.html">加入我们</a>
+                    <a href="../english/index.html">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 个人信息头部 -->
+    <div class="profile-header">
+        <div class="container">
+            <div class="profile-info">
+                <div class="avatar">
+                    <img src="../assets/teachers/liqing1.png" alt="liqing">
+                </div>
+                <div class="info">
+                    <h1>李子遇</h1>
+                    <div class="title">副教授、特聘研究员</div>
+                    <div class="contact">
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:ziyuli@bit.edu.cn">ziyuli@bit.edu.cn</a>
+                        </div>
+                        <div>
+                            <i class="fas fa-building"></i>
+                            <span>北京理工大学中关村校区中心教学楼1402F</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容区 -->
+    <div class="container">
+        <div class="main-content">
+            <!-- 左侧内容 -->
+            <div class="content-left">
+                <!-- 个人简介 -->
+                <section class="card">
+                    <h2>个人简介</h2>
+                    <div class="bio">
+                        李子遇，北京理工大学计算机学院副教授/特聘研究员，博士生导师。
+                        主持 / 参与国家自然科学基金青年基金（C类），博士后基金，国家自然科学基金专项项目，国家重点研发计划课题等10余项国家/省部级项目，以第一作者 / 通讯作者在顶级期刊和会议发表论文30余篇，获中国脑机接口华瑙奖-年度中国脑机接口十大进展等。
+                        课题组常年与国际国内顶尖研究团队开展学术合作，并与多家企业建立了长期校企合作关系。每年招收多名博士和硕士研究生，欢迎对人工智能与脑科学等相关领域研究有兴趣的同学加入!
+                    </br>
+                    </div>
+                </section>
+
+                <!-- 发表论文 -->
+                <section class="card">
+                    <h2>学术成果</h2>
+                    <div class="publication-text">
+                        学术论文：
+[1] Ziyu Li, Zhiyuan Zhu, Qing Li, Xia Wu*. Graph pre-trained framework with spatio-temporal importance masking and fine-grained optimizing for neural decoding. Pattern Recognition. 2026, 170: 112006. 中科院1区Top  </br>
+[2] Ziyu Li, Zhiyuan Zhu, Qing Li, Xia Wu*. Decoding the Brain via Multi-view Brain Topology Contrastive Learning. Pattern Recognition. 2026, 172: 112445. 中科院1区Top  </br>
+[3] Ziyu Li, Qing Li, Zhiyuan Zhu, Zhongyi Hu, Xia Wu*. Multi-Scale Spatio-Temporal Fusion with Adaptive Brain Topology Learning for fMRI Based Neural Decoding. IEEE Journal of Biomedical and Health Informatics, 2024, 28(1):262-272. 中科院1区Top</br>
+[4] Ziyu Li, Zhiyuan Zhu, Qing Li, Xia Wu*. Jointly Fusing Multi-Scale Spatial-Logical Brain Networks: A Neural Decoding Method. IEEE Journal of Biomedical and Health Informatics, 2023, 27(1): 445-456. 中科院1区Top</br>
+[5] Ziyu Li, Xia Wu*, Xueyuan Xu, Hailing Wang, Zhenghao Guo, Zhichao Zhan, Li Yao. The Recognition of Multiple Anxiety Levels Based on Electroencephalograph. IEEE Transactions on Affective Computing, 2022, 13(1):519-529. 中科院1区Top</br>
+[6] Ziyu Li, Qing Li, Xiuxing Li, Zhuo Wang, Xia Wu*. Dual‑Brain Fusion: Bidirectional Empowerment Between Human Brain and Brain‑Inspired Systems, Fundamental Research, 2026. 国家自然科学基金委主办</br>
+[7] Ziyu Li, Zhiyuan Zhu, Qing Li, Xia Wu*. Spatio-temporal Pre-trained Foundation Model for Neural Decoding with Fine-grained Optimization, MICCAI 2025. 医学影像顶级会议</br>
+[8] Ziyu Li, Hailing Wang, Xia Wu*, Xueyuan Xu, Shuai Wei, Li Yao. Working Memory Training Using EEG Neurofeedback Based on Theta Coherence of Brain Regions. 2019 7th International Winter Conference on Brain-Computer Interface (BCI), Gangwon, Korea (South), 2019, pp. 1-6. Oral，脑机接口顶级会议</br>
+[9] Boheng Liu, Ziyu Li*, Chenghua Duan, Yutian Liu, Zhuo Wang, Xiuxing Li, Qing Li, Xia Wu. Cognitive Predictive Processing: A Human-inspired Framework for Adaptive Exploration in Open-World Reinforcement Learning (NeurIPS). Advances in Neural Information Processing Systems, 2025, 38: 83918–83945. CCF-A类会议</br>
+[10] Boheng Liu, Ziyu Li*, Zhong Zhang, Mengrui Xu, Chenghua Duan, Dehao Liu, Qing Li, Xia Wu. RodNet: Visual Pathway-Inspired Adaptive Sparse Network for Efficient Low-Light Image Enhancement. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). 2026: 4961–4970. CCF-A类会议</br>
+[11] Yuyang Han, Ziyu Li*, Diwei Su, Shihao Zhang, Qing Li, Zhiying Long, and Xia Wu. TTMC: Brain-Inspired Test-Time Memory Calibration with Orthogonal Projection for Online Continual Learning. In Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2 (KDD). 2026, 1554–1565. CCF A类会议</br>
+[12] Yuyang Han, Ziyu Li*, Zhiying Long, and Xia Wu. The Stability-Plasticity Dilemma Revisited: A Brain-Inspired Continual Learning Method with Representation-Function Separation. ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2026, 4816-4820. 语音、信号处理顶级会议</br>
+[13] Yuyang Han, Ziyu Li*, Zhiying Long, and Xia Wu. Consolidating Memories, Not Data: A Privacy-Aware and Stable Framework for Continual Learning on EEG, ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2026, 6786-6790. 语音、信号处理顶级会议</br>
+[14] Yifan Niu, Ziyu Li*, Li Yao, Xia Wu. BAMIL: Towards Finer Temporal EEG Event Detection via Boundary-Aware Multi-Instance Learning. ACM Multimedia 2026. Oral，CCF-A类会议</br>
+[15] 邬霞，李子遇*，李晴，李秀星，王焯. 脑启智跃：人脑与类脑的协同创新范式. 智能系统学报,2026,21(2):337-352,16. 中国人工智能学会会刊</br>
+
+
+发明专利</br>
+1. 基于多视角自监督脑拓扑推断的脑解码方法, 授权号：ZL 2024 1 1835148.7</br>
+2. 一种基于自监督时空图模型的fMRI脑解码方法及装置, 授权号：ZL 2024 1 1265448.6</br>
+3一种受空间关系记忆启发的机器人运动规划方法及装置，授权号：ZL 2024 1 1193677.1 </br>
+4. 引导式量子视觉图像识别方法及装置，授权号：ZL 2025 1 0151358.2</br>
+5. 一种受人脑情景语义协同机制启发的机器人运动规划方法，已授权 </br>
+</div>
+                </section>
+
+                <!-- 科研项目 -->
+                <section class="card">
+                    <h2>科研项目</h2>
+                    <div class="content-text">
+[1] 国家自然科学基金青年项目，面向自然脑机交互的内部言语重建解码关键技术，主持，在研</br>
+[2] 中国博士后科学基金面上项目，大模型驱动的内在言语感知脑机交互关键技术，主持，结题</br>
+[3] 教育部重点实验室课题，大脑多尺度特性启发的决策神经网络理论与方法，主持，结题</br>
+[4] 国家自然科学基金专项项目，人脑高级认知信息的高精度解码算法研究，项目骨干</br>
+[5] 国家自然科学基金重点项目，大模型情感价值对齐认知及可信决策理论研究，项目骨干</br>
+[6] 国家重点研发计划子课题，多模态交互式学习能力评估理论与方法，项目骨干</br>
+[7] 国家自然科学基金重点项目，受大脑认知启发的类脑决策神经网络理论与方法，项目骨干</br>
+[8] JKW重点项目，基于脑功能数据的***提取与***解码，项目骨干</br>
+[9] 北京市自然科学基金重点项目，开放动态环境中基于记忆增强的智能体关键技术研究，项目骨干</br>
+
+                    </div>
+                </section>
+            </div>
+
+            <!-- 右侧信息栏 -->
+            <div class="content-right">
+                <!-- 研究方向 -->
+                <section class="side-card">
+                    <h3>研究方向</h3>
+                    <div class="research-tags">
+                        <span class="tag">脑功能数据智能解码与类脑智能</span>
+                    </div>
+                </section>
+
+                <!-- 获奖情况 -->
+                <section class="side-card">
+                    <h3>获奖情况</h3>
+                    <div class="content-text">
+                        2025年,中国脑机接口华瑙奖，年度中国脑机接口十大进展。</br>
+2025年, 2th Chinese Conference on Brain-Machine Intelligence, Spotlight Poster</br>
+2024年, 14th international Conference on Brain Inspired Cognitive Systems, Best Student Paper Award       </br>                    
+2024年, 1th Chinese Conference on Brain-Machine Intelligence, Spotlight Poster</br>
+                    </div>
+                </section>
+
+                <section class="side-card">
+                    <h3>社会兼职</h3>
+                    <div class="content-text">
+                        中国神经科学学会   类脑智能分会   委员</br>
+IEEE Member</br>
+长期担任PatternRecognition、Neural Networks、Neurocomputing 等国际权威期刊审稿人，同时受邀担任NeurIPS、AAAI、ICLR、ICML、MICCAI等人工智能与医学影像领域顶级国际会议审稿人，以严谨学术态度参与成果评议，助力领域研究质量提升与学术规范建设。</br>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>联系方式<p>
+                <p>运营单位：脑机接口与类脑智能研究中心</p>
+                <p>联系地址：北京理工大学中关村校区中心教学楼1401</p>
+                <p>联系邮箱：</p>
+            </div>
+            <div class="footer-section">
+                <p>快速链接<p>
+                <p>问题反馈</p>
+                <p>著作权申诉</p>
+                <p>举报邮箱：</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
