@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/logo.png" type="image/png">
+    <title>教师详情 - 北京理工大学脑机接口与类脑智能研究中心</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            padding: 0.8rem 4rem;
+            color: white;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            opacity: 0.9;
+        }
+
+        /* 个人信息头部 */
+        .profile-header {
+            background: linear-gradient(135deg, #1a237e, #3949ab);
+            padding: 60px 0;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .avatar img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+        }
+
+        .info {
+            text-align: left;
+        }
+
+        .info h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .info .title {
+            font-size: 20px;
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        .info .contact {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .info .contact div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0;
+        }
+
+        .info .contact a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .info .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card, .side-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            font-size: 24px;
+            color: #1a237e;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8eaf6;
+        }
+
+        h3 {
+            color: #1a237e;
+            font-size: 20px;
+            margin: 0 0 15px;
+        }
+
+        .bio, .publication-text, .content-text {
+            line-height: 1.8;
+            color: #37474f;
+            text-align: justify;
+        }
+
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #e8eaf6;
+            color: #1a237e;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .profile-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .info .contact {
+                text-align: center;
+            }
+
+            .info .contact div {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <span>R.C. for BCI & BII, BIT</span>
+                </div>
+                <div class="nav-links">
+                    <a href="../index.html">首页</a>
+                    <a href="../research.html">研究</a>
+                    <a href="../team.html">团队</a>
+                    <a href="../publications.html">论文</a>
+                    <a href="../join.html">加入我们</a>
+                    <a href="../english/index.html">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 个人信息头部 -->
+    <div class="profile-header">
+        <div class="container">
+            <div class="profile-info">
+                <div class="avatar">
+                    <img src="../assets/teachers/litongtong.jpg" alt="litngtong">
+                </div>
+                <div class="info">
+                    <h1>李同同</h1>
+                    <div class="title">博士后、助理研究员</div>
+                    <div class="contact">
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:ttong.li@bit.edu.cn">ttong.li@bit.edu.cn</a>
+                        </div>
+                        <div>
+                            <i class="fas fa-building"></i>
+                            <span>北京理工大学中关村校区信息中心413</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容区 -->
+    <div class="container">
+        <div class="main-content">
+            <!-- 左侧内容 -->
+            <div class="content-left">
+                <!-- 个人简介 -->
+                <section class="card">
+                    <h2>个人简介</h2>
+                    <div class="bio">
+                        李同同，男，中共党员，工学博士，北京理工大学计算机学院博士后、助理研究员，2026年博士毕业于兰州大学计算机应用技术专业；入选首批中国科协托举工程博士生专项计划、甘肃省人工智能学会优秀博士学位论文。研究方向致力于人工智能技术赋能康复脑机接口及智慧医疗，取得系列代表性成果，累积发表文章近30篇，其中以第一作者/通讯作者（含共同）在 NN、IEEE TNSRE、iScience 等期刊发表文章11篇，授权国家发明专利4项，主持甘肃省优秀博士生项目、甘肃省研究生“创新之星”项目、兰州大学中央高校青稞计划等科研项目4项；曾获隆基青年奖、博士国家奖学金、宝钢奖学金、华为奖学金、甘肃省专利奖二等奖等荣誉20余项，曾被兰州大学新闻网等媒体报道多次。课题组常年招收博士、硕士研究生，欢迎对人工智能与脑科学等相关领域研究有兴趣的同学加入!</br>
+                    </div>
+                </section>
+
+                <!-- 发表论文 -->
+                <section class="card">
+                    <h2>学术成果</h2>
+                    <div class="publication-text">
+                        [代表性论文]</br>
+[1]	Tongtong Li, Kai Li, Ziyang Zhao, et al. Deep adaptive fusion network with multimodal neuroimaging information for MDD diagnosis: an open data study[J]. Neural Networks, 2025: 108151.（中科院2区/ Top, CCF-B, IF=6.3）</br>
+[2]	Tongtong Li, Yuhui Guo, Ziyang Zhao, et al. Automated diagnosis of major depressive disorder with multi-modal MRIs based on contrastive learning: a few-shot study[J]. IEEE Transactions on Neural Systems and Rehabilitation Engineering, 2024, 32: 1566-1576. （中科院2区, IF=5.2）</br>
+[3]	Tongtong Li, Ning Hou, Jiandong Yu, et al. Evolutionary neural architecture search for automated MDD diagnosis using multimodal MRI imaging [J]. iScience, 2024, 27(10): 111020.(中科院2区, IF=4.1)</br>
+[4]	Tongtong Li, Junfeng Mao, Jiandong Yu,et al. Fully automated classification of pulmonary nodules in positron emission tomography–computed tomography imaging using a two-stage multimodal learning approach [J]. Quantitative Imaging in Medicine and Surgery, 2024,14(8): 5526.(中科院2区, IF=2.9)</br>
+[5]	Tongtong Li, Qiang Lin, Yanru Guo, et al. Automated detection of skeletal metastasis of lung cancer with bone scans using convolutional nuclear network[J]. Physics in Medicine and Biology, 2022, 67(1): 015004. (中科院2区/Top, IF = 4.174)</br>
+[6]	Tongtong Li, Qiang Lin, Xiaoyan Chen, et al. Deep Learning Based Search and Recommendation of Literature in Wanfang Knowledge Base [C]// IEEE International Conference on Intelligent Computing and Signal Processing (ICSP), 2021, pp. 781-785. (EI indexed)</br>
+[7]	Jiandong Yu #, Tongtong Li #, Xuerong Shi, et al. ETMO-NAS: An Efficient Two-step Multimodal One-shot NAS for lung nodules classification [J]. Biomedical Signal Processing and Control. 2025, 104: 107479. (中科院2区, IF=4.9, 共同一作)</br>
+[8]	Yuhui Guo #, Tongtong Li #, Ziyang Zhao, Qi Sun, Miao Chen, Yanli Jiang, Zhijun Yao *, and Bin Hu*. Liver fibrosis automatic diagnosis utilizing Dense-fusion Attention Contrastive Learning Network[J]. Medical Physics, 2024. (IF=3.2, 中科院2区, 共同一作)</br>
+[9]	Rong Wang,...,Tongtong Li *, Ping Xie. A two-stage multimodal learning framework for automated diagnosis of obstructive coronary artery disease using Dynamic Single-photon Emission Computed Tomography. Quantitative Imaging in Medicine and Surgery, 2025. (中科院3区, IF = 2.3, 通讯作者)</br>
+[10]	邬霞,李同同,李子遇,等.基础模型驱动的脑机接口编解码新范式[J].数据采集与处理,2026,41(2):439-460. (中文核心期刊)</br>
+[授权专利]</br>
+[11]	Qiang Lin, Tongtong Li, Zhengxing Man, Yongchun Cao. HUMAN BODY PART SEGMENTATION METHOD AND SYSTEM BASED ON SPECT IMAGING [P]. Nederland: 2030778. 22 March 2023. (国际(荷兰)发明专利, 已授权)</br>
+[12]	林强, 李同同, 满正行, 曹永春.一种基于SPECT成像的人体部位切分方法及系统:202110252798.9[P]. 2021-10-22. (国家发明专利, 已授权)</br>
+[13]	胡斌, 李同同, 姚志军, 赵子阳. 基于多模态神经影像融合的图像处理方法、装置及设备: 202510172028.1[P]. 2025-08-22. (国家发明专利, 已授权)</br>
+[14]	胡斌, 李同同, 姚志军. 一种PET/CT影像识别方法及装置:202211301507.1[P]. 2023-01-13. (国家发明专利, 已授权)</br>
+
+
+
+</div>
+                </section>
+
+                <!-- 科研项目 -->
+                <section class="card">
+                    <h2>科研项目</h2>
+                    <div class="content-text">
+                    [1]	甘肃省基础研究计划优秀博士生项目. 面向抑郁症的多源影像融合建模与辅助诊断关键技术研究，在研，主持</br>
+[2]	甘肃省优秀研究生创新之星项目.  面向肺癌PET/CT的融合算法及辅助诊断关键技术研究，已结题，主持</br>
+[3]	兰州大学自然科学类中央高校基本科研业务费科研能力提升项目(青稞计划)-优秀研究生创新项目. 基于自动机器学习的MRIs融合算法研究，已结题，主持</br>
+
+                    </div>
+                </section>
+            </div>
+
+            <!-- 右侧信息栏 -->
+            <div class="content-right">
+                <!-- 研究方向 -->
+                <section class="side-card">
+                    <h3>研究方向</h3>
+                    <div class="research-tags">
+                        <span class="tag">康复脑机接口</span>
+                        <span class="tag">医学影像计算</span>
+                    </div>
+                </section>
+
+                <!-- 获奖情况 -->
+                <section class="side-card">
+                    <h3>获奖情况</h3>
+                    <div class="content-text">
+                        2026年，甘肃省人工智能学会优秀博士学位论文</br>
+2025年，甘肃省专利奖二等奖</br>
+2024年，中国科协托举工程博士生专项计划
+
+
+</br>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>联系方式<p>
+                <p>运营单位：脑机接口与类脑智能研究中心</p>
+                <p>联系地址：北京理工大学中关村校区中心教学楼1401</p>
+                <p>联系邮箱：</p>
+            </div>
+            <div class="footer-section">
+                <p>快速链接<p>
+                <p>问题反馈</p>
+                <p>著作权申诉</p>
+                <p>举报邮箱：</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
